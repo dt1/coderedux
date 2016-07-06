@@ -1,0 +1,18 @@
+(ns coderedux.musictheory.resources
+  (:use hiccup.element 
+        hiccup.core))
+
+(defn music-theory-resources []
+  [:article.large-9.columns
+   [:h2 "Music Theory Resources:"]
+   [:p "A few (free) resources those who study music or music theory may be interested in:"]
+   [:p "Please check back often as this list will continue to grow. If you have any resources you'd like me to add, please send an email and tell me about it."]
+   [:p [:b "Knowledge:"]]
+   [:p.notes [:a {:href "http://online-musical-scales.com/"}  "Online Musical Scales"]]
+   [:p.notes "To learn more about tuning and how it may not follow the Circle of Fifths as one would expect, search \"meantone\" to find many excellent articles. I don't have any one particular article I like more than others. Just be prepared for some fairly technical articles. "]
+   [:p [:b "Programming:"]]
+   [:p.notes [:a {:href "http://skillsmatter.com/podcast/home/functional-composition"} "Chris Ford presents \"Function Composition\" using Clojure. "]]
+   [:p [:b "Entertaining / Thought-Provoking:"]]
+   [:p.notes [:a {:href "http://www.everythingisaremix.info/watch-the-series/"} "Everything is a Remix"]]
+   [:p.notes [:a {:href "http://www.youtube.com/watch?v=JdxkVQy7QLM"} "Rob Paravonian's Rant Against Pachabel"]]
+   [:p.notes [:a {:href "http://www.ted.com/talks/benjamin_zander_on_music_and_passion.html"} "Benjamin Zander: The Transformative Power of Classical Music"]]])

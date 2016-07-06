@@ -1,0 +1,316 @@
+$white: #FFFFFF;
+$black: #000000;
+$radiusOne: 30px;
+$headerColor: #006BB5;
+$searchHeaderColor: #323232;
+
+
+img{
+    border-radius: $radiusOne;
+}
+ 
+
+body{
+    background-color: #929292;
+}
+
+.clear{
+    clear: both;
+}
+
+.topNav{
+    background-color: white;
+}
+
+a{
+    text-decoration: none;
+    color: $white;
+}
+
+.topNav a{
+    color: $black;
+}
+
+.header{
+    background-color: $headerColor;
+    height: auto;
+}
+
+.companyLogo{
+    float: left;
+    margin: .25% 0% 0% 1%;
+}
+
+.subHeaderOne{
+    color: $white;
+    font-size: 75%;
+    margin-left: 15%;
+    height: 3%;
+    padding: 2%; 
+    float: left;
+    a{
+        color: $white;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+ul{
+    list-style-type: none;
+}
+
+.subHeaderNav{
+    background-color: $headerColor;
+    color: $white;
+    position: center;
+    height: 2em;
+    a{
+        color: $white;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    li{
+        float: left;
+        padding-left: 2%;
+        }
+}
+
+.hoverBackground:hover{
+    background-color: $white;
+    a{
+        color: $black;
+}
+}
+
+.storeButton{
+    margin: 0% 0% 0% 80%;
+}
+
+
+.dropDown{
+    position: absolute;
+    display: none;
+}
+
+.subHeaderNav ul li:hover .dropDown {
+    display: block;
+    background-color: $white;
+    color: $black;
+}
+
+.searchBox{
+    
+}
+ 
+
+body{
+    background-color: #929292;
+}
+
+.clear{
+    clear: both;
+}
+
+.topNav{
+    background-color: white;
+}
+
+a{
+    text-decoration: none;
+    color: $white;
+}
+
+.topNav a{
+    color: $black;
+}
+
+.header{
+    background-color: $headerColor;
+    height: auto;
+}
+
+.companyLogo{
+    float: left;
+    margin: .25% 0% 0% 1%;
+}
+
+.subHeaderOne{
+    color: $white;
+    font-size: 75%;
+    margin-left: 15%;
+    height: 3%;
+    padding: 2%; 
+    float: left;
+    a{
+        color: $white;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+ul{
+    list-style-type: none;
+}
+
+.subHeaderNav{
+    background-color: $headerColor;
+    color: $white;
+    position: center;
+    height: 2em;
+    a{
+        color: $white;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    li{
+        float: left;
+        padding-left: 2%;
+        }
+}
+
+.hoverBackground:hover{
+    background-color: $white;
+    a{
+        color: $black;
+}
+}
+
+.storeButton{
+    margin: 0% 0% 0% 80%;
+}
+
+
+.dropDown{
+    position: absolute;
+    display: none;
+}
+
+.subHeaderNav ul li:hover .dropDown {
+    display: block;
+    background-color: $white;
+    color: $black;
+}
+
+.searchBox{
+    
+}
+ 
+
+body{
+    background-color: #929292;
+}
+
+.clear{
+    clear: both;
+}
+
+.topNav{
+    background-color: white;
+}
+
+a{
+    text-decoration: none;
+    color: $white;
+}
+
+.topNav a{
+    color: $black;
+}
+
+.header{
+    background-color: $headerColor;
+    height: auto;
+}
+
+.companyLogo{
+    float: left;
+    margin: .25% 0% 0% 1%;
+}
+
+.subHeaderOne{
+    color: $white;
+    font-size: 75%;
+    margin-left: 15%;
+    height: 3%;
+    padding: 2%; 
+    float: left;
+    a{
+        color: $white;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+ul{
+    list-style-type: none;
+}
+
+.subHeaderNav{
+    background-color: $headerColor;
+    color: $white;
+    position: center;
+    height: 2em;
+    a{
+        color: $white;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    li{
+        float: left;
+        padding-left: 2%;
+        }
+}
+
+.hoverBackground:hover{
+    background-color: $white;
+    a{
+        color: $black;
+}
+}
+
+.storeButton{
+    margin: 0% 0% 0% 80%;
+}
+
+
+.dropDown{
+    position: absolute;
+    display: none;
+}
+
+.subHeaderNav ul li:hover .dropDown {
+    display: block;
+    background-color: $white;
+    color: $black;
+}
+
+.searchHeader {
+    background-color: $searchHeaderColor;
+}
+
+.searchBox{
+        border-radius: $radiusOne;
+        padding: 2px;
+}
+
+.scoreBox{
+    background-color: silver;
+    .scores li{
+        float:left;
+        margin-right: 75px;
+        &:hover{
+            backgroun-color: $white;
+        }
+
+        p{
+            margin-bottom: -15px;
+        }
+    }
+
+}

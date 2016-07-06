@@ -1,0 +1,6 @@
+(ns coderedux.postgresql.iucte
+  (:use hiccup.element 
+        hiccup.core))
+
+(defn article []
+  )

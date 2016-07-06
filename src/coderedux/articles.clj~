@@ -1,0 +1,159 @@
+(ns coderedux.articles
+  (:use hiccup.element 
+        hiccup.core))
+
+(defn four-oh-four []
+  [:article.large-9.columns
+  [:p "I moved a few urls around to make navigation a little easier. Sorry if htis created an inconvenience:"
+   [:ul
+    [:li (link-to "/music-theory/circle-of-fifths-part-one" "Circle of Fifths: Part One") ]
+    [:li (link-to "/music-theory/circle-of-fifths-part-two" "Circle of Fifths: Part Two")]
+    [:li (link-to "/music-theory/resources" "Resources")]]]])
+
+(defn music-theory-article-list []
+  [:article.large-9.columns
+  [:h2 "Music Theory for (non)Musicians and (non)Programmers"]
+  [:ul
+   [:li (link-to "/music-theory/circle-of-fifths-part-one" "Circle of Fifths: Part One") ]
+   [:li (link-to "/music-theory/circle-of-fifths-part-two" "Circle of Fifths: Part Two")]
+   [:li (link-to "/music-theory/resources" "Resources")]]])
+
+
+
+
+(defn blog-list []
+  [:article.large-9.columns
+  [:h1 "Bloggy Stuff"]
+  (link-to "/bloggy-stuff/code-redux-redux-leaving-noir" "Code Redux Redux / Leaving Noir")])
+
+(defn reduxing []
+  [:article.large-9.columns
+  [:h2 "Code Redux Redux / Leaving Noir"]
+  [:p "It's a bittersweet day for me. In a blog post titled " [:a {:href "http://blog.raynes.me/blog/2012/12/13/moving-away-from-noir/"} "Moving Away from Noir, "], "Anthony Grimes, the maintainer of Noir, laid out the case for deprecating Noir. All the signs were there, and it was only a matter of time before Noir met its maker. As someone learning how to use Clojre, I knew this day would come, but Noir helped me to understand Clojure more than any teacher ever could have."]
+  
+  [:p "There comes a day -- or in my case, a series of days -- in every developer's life that he or she must face the facts and realize that the way they've been doing things is wrong, or at the very least, not optimal. I've been pondering my own growth and my own path lately, and there are many things that I have had to face to understand my own directions. Surprisingly, walking through these doors have been the hardest part."]
+  
+  [:p "It all started with me staring at my computer and spending hours attempting to install ClojureScript on my Windows 7 machine. I discovered that the best way to get up and running with ClojureScript is to install Leiningen 2. I updated the lein files on my computer and I am faced with an ouput along the lines of \"Leiningen 2 isn't available on Windows,\" which roughly translated to: \"Learn how to use a real operating system because we don't have time to deal with this.\" I can't afford to buy a mac, so I finally made the commitment to install something on VirtualBox: that ugly icon on my Desktop that teased me for months, pointing me to a new world that, for far too long, sat empty. "]
+  
+  [:p "Fine, I better learn how to use Linux then. Many moths ago, I dived into Kubuntu, and while the interface was absolutely beatiful to look at, it was far too confusing for me to bother figuring out. More than anything, though, I frantically searched for anything and everything to uninstall, and this feeling of uninstall dread that envelopes me every time I buy a new Win-machine pushed me away from Linux for what I thought was forever."]
+
+  [:p "The wonderful thing about Linux is the very thing I though was horrible about Linux before: there are many flavors. After much research, I really only wanted a purely miminal install, I didn't want to uninstall anything, and I wanted something that was light-weight and fast, as that was the main concern if I was going to use a VM."]
+
+  (image "/img/arch.png")
+
+  [:p "Arch Linux served my minimal sensibilities well. I lead an Spartan life. \"Gem install -- harball\" could easily be extended to life. Noir is aptly described as a micro-framework and now Noir is tossed aside as being to bloated for even Clojure and Lisp standards? This is my kind of community. "]
+
+  [:p "Arch Linux can be described as a seemingly daunting affair, asking the user to install from nearly the kernal, taking careful consideration of what to install along the way, adhering to the \"Arch Way,\" creating your own masterpiece distro. Is it any wonder that a search of Arch Desktops shows the most awesome desktops of any Linux Distro? Every desktop is clean, unique, and a pure representation of Occam's Razor: everything exists for a reason, and here, expression and functionality is maximized. Master builders do not create the Hermitage by tearing down walls. An similarly, a great desktop environment, perfect and unique, cannot be fully created from uninstalling excess. Installing Kubuntu after all of this would be a disaster. Arch Linux desktops often have the Arch symbol displayed on the monitor. What otehr distros feature users who take on the OS symbol as their own? Arch is a pure expression of the user, and that is a philosophy easy to behold."]
+
+  [:p "What the readers of this post may find surprising is that Arch, for all its reputation, is actually quite easy to deal with. I can't possibly list the amount of time I have wasted installing programs on Windows and getting my computer up to some minimal standard of a non-frustrating development environment. The dearth of information hints at how many people simply gave up. Discounting PATH variables, setting up an environment on Windows is incredibly difficult, and in many cases, such as attempting use Lieningen 2 or ClojureScript, outright impossible or impractical. After doing this for nearly a year, installing Arch was a cakewalk, and in fact, it took me less time to install Arch than it did for me to install Clojure on Windows. Just follow a list of step-by-step instructions and at the end, reboot. The longest decision for me was deciding what desktop to use. I ended up using LXDE. There are a few really good tutorials to use for guidance, but after the initial reading, you'd quickly discover that the Arch docs are more than a proficient guide."]
+  [:p "Installling Clojure was a simple pacman -S install. Installing Leiningen was a quick lesson in creating a package and installing it. Instead of running around the entire file system searching for POM files, setting up paths, and searching hours for some missing piece, pacman installed all the dependencies for me with no fuss and now everything just works and the whole install process took less than 10 minutes."]
+  [:p "With Arch installed, I can now upgrade the site to Leiningen 2, and here I thought it was done, but now I have learn how to create routes in Compojure and make the needed changes to this site and " [:a {:href "http://www.soloresume.com"} "Solo Resume "] "before I can continue expanding the sites to the point of no return. Noir was a wonderful tool for learning, but it's time to strip away the excess and the bloat. I'll still keep up the articles on this site, and I am dedicated to getting at least one article up per week, but I want readers to know what is happening and why there may be some slow update times on this site. I currently putting the final touches on one article and I expect that one to be up tonight. Thank you all for checking in."]])
+
+(defn on-clojure []
+  [:article
+  [:h1 "On Clojure / Articles"]
+  [:h2 (link-to "/on-clojure/building-dynamic-form-in-clojure") "Building Dynamic Form Pages in Clojure"]])
+
+(defn clojure-code []
+  [:pre [:code "(ns soloResume.views.emppages
+  (:require 
+   [soloResume.views.common :as common]
+   [noir.response :as resp]
+   [soloResume.models.datapass :as db]
+   [noir.session :as sesh])
+  (:use [noir.core] 
+        [korma.core]
+        [hiccup.page-helpers]
+        [hiccup.form-helpers]))		
+
+(def emp-page-num {:one \"one\" :two \"two\" :three \"three\" :four \"four\" :five \"five\"})
+
+(def data-input {\"one\" [[:suser-emp-name db/jobhunteremployers :empname] 
+                          [:suser-emp-city db/jobhunteremployers :city]
+                          [:suser-emp-state-and-country db/jobhunteremployers :stateandcountry]
+                          [:suser-emp-position db/jobhunteremployers :position]
+                          [:suser-emp-start-month db/jobhunteremployers :startmonth]
+                          [:suser-emp-start-year db/jobhunteremployers :startyear]
+                          [:suser-emp-end-month db/jobhunteremployers :endmonth]
+                          [:suser-emp-end-year db/jobhunteremployers :endyear]
+                          [:suser-emp-start-date db/jobhunteremployers :startdate]
+                          [:suser-emp-end-date db/jobhunteremployers :enddate]
+                          
+                          [:suser-emp-duty1 db/jobhunteremployers :duty1]
+                          [:suser-emp-duty2 db/jobhunteremployers :duty2]
+                          [:suser-emp-duty3 db/jobhunteremployers :duty3]
+                          [:suser-emp-duty4 db/jobhunteremployers :duty4]
+                          [:suser-emp-duty5 db/jobhunteremployers :duty5]]
+                 
+                 \"two\" [[:suser-emp-name db/jobhunteremployers :empname] 
+                          [:suser-emp-city db/jobhunteremployers :city]
+                          [:suser-emp-state-and-country db/jobhunteremployers :stateandcountry]
+                          [:suser-emp-position db/jobhunteremployers :position]
+                          [:suser-emp-start-month db/jobhunteremployers :startmonth]
+                          [:suser-emp-start-year db/jobhunteremployers :startyear]
+                          [:suser-emp-end-month db/jobhunteremployers :endmonth]
+                          [:suser-emp-end-year db/jobhunteremployers :endyear]
+                          [:suser-emp-start-date db/jobhunteremployers :startdate]
+                          [:suser-emp-end-date db/jobhunteremployers :enddate]
+                          
+                          [:suser-emp-duty1 db/jobhunteremployers :duty1]
+                          [:suser-emp-duty2 db/jobhunteremployers :duty2]
+                          [:suser-emp-duty3 db/jobhunteremployers :duty3]
+                          [:suser-emp-duty4 db/jobhunteremployers :duty4]
+                          [:suser-emp-duty5 db/jobhunteremployers :duty5]]})
+
+(defn data-build [data-key suser page-num]
+  (loop [output {}
+         items (seq (data-input data-key))]
+    (if items
+      (recur
+       (let [[kw db fieldname] (first items)]
+         (assoc output kw 
+                (select db 
+                        (fields fieldname) 
+                        (where {:username suser :employernumber page-num})))) 
+       (next items))
+      output)))
+
+(defn form-builder [pid pname data-key data-table information field-key common-key]
+  [pid pname	
+   [:i (let [{[{val data-key}] data-table} information]
+         (format \"%s\" val))]
+   [:br]
+   (if (= common-key \"\")
+     (text-field field-key)
+     (common/menu-build field-key common-key))])
+
+(defpage \"/employer-:emp-page-num\" {:keys [emp-page-num]}
+  (common/res-heads
+   (let [suser (sesh/get :uname)]		
+     (let [information (load-string (data-build emp-page-num suser
+                                                (common/to-integer emp-page-num)))]
+       [:div.span6.offset1
+        (form-to [:post (str \"/employer-\"emp-page-num)]
+                 [:h3 (str \"Employment History: Employer \" (common/to-numeral emp-page-num))]
+                 (form-builder :p \"Employer Name: \" :empname :suser-emp-name information \"empname\" \"\")
+                 (form-builder :p \"City: \" :city :suser-emp-city information \"empcity\" \"\")
+                 (form-builder :p#statePar \"State (and Country): \" :stateandcountry :suser-emp-state-and-country information \"empstate\" \"\")
+                 (form-builder :p \"Position: \" :position :suser-emp-position information \"emppos\" \"\")
+                 [:input.buttons {:type \"submit\" :value \"update\"}])]))
+   [:div.blankdiv [:p]]))
+
+(defpage [:post \"/employer-:emp-page-num\"] {:keys [emp-page-num empname empcity empstate emppos]}
+  (let [suser (sesh/get :uname)]
+    (if (not (= empname \"\"))
+      (update db/jobhunteremployers 
+              (set-fields {:empname empname})
+              (where {:username suser :employernumber (common/to-integer emp-page-num)})))
+    (if (not (= empcity \"\"))
+      (update db/jobhunteremployers 
+              (set-fields {:city empcity})
+              (where {:username suser :employernumber (common/to-integer emp-page-num)})))
+    (if (not (= empstate \"-\"))
+      (update db/jobhunteremployers 
+              (set-fields {:stateandcountry empstate})
+              (where {:username suser :employernumber (common/to-integer emp-page-num)})))
+    (if (not (= emppos \"\"))
+      (update db/jobhunteremployers 
+              (set-fields {:position emppos})
+              (where {:username suser :employernumber (common/to-integer emp-page-num)})))))"]])

@@ -1,0 +1,226 @@
+img {
+  border-radius: 30px; }
+
+body {
+  background-color: #929292; }
+
+.clear {
+  clear: both; }
+
+.topNav {
+  background-color: white; }
+
+a {
+  text-decoration: none;
+  color: white; }
+
+.topNav a {
+  color: black; }
+
+.header {
+  background-color: #006bb5;
+  height: auto; }
+
+.companyLogo {
+  float: left;
+  margin: 0.25% 0% 0% 1%; }
+
+.subHeaderOne {
+  color: white;
+  font-size: 75%;
+  margin-left: 15%;
+  height: 3%;
+  padding: 2%;
+  float: left; }
+  .subHeaderOne a {
+    color: white; }
+    .subHeaderOne a:hover {
+      text-decoration: underline; }
+
+ul {
+  list-style-type: none; }
+
+.subHeaderNav {
+  background-color: #006bb5;
+  color: white;
+  position: center;
+  height: 2em; }
+  .subHeaderNav a {
+    color: white; }
+    .subHeaderNav a:hover {
+      text-decoration: underline; }
+  .subHeaderNav li {
+    float: left;
+    padding-left: 2%; }
+
+.hoverBackground:hover {
+  background-color: white; }
+  .hoverBackground:hover a {
+    color: black; }
+
+.storeButton {
+  margin: 0% 0% 0% 80%; }
+
+.dropDown {
+  position: absolute;
+  display: none; }
+
+.subHeaderNav ul li:hover .dropDown {
+  display: block;
+  background-color: white;
+  color: black; }
+
+body {
+  background-color: #929292; }
+
+.clear {
+  clear: both; }
+
+.topNav {
+  background-color: white; }
+
+a {
+  text-decoration: none;
+  color: white; }
+
+.topNav a {
+  color: black; }
+
+.header {
+  background-color: #006bb5;
+  height: auto; }
+
+.companyLogo {
+  float: left;
+  margin: 0.25% 0% 0% 1%; }
+
+.subHeaderOne {
+  color: white;
+  font-size: 75%;
+  margin-left: 15%;
+  height: 3%;
+  padding: 2%;
+  float: left; }
+  .subHeaderOne a {
+    color: white; }
+    .subHeaderOne a:hover {
+      text-decoration: underline; }
+
+ul {
+  list-style-type: none; }
+
+.subHeaderNav {
+  background-color: #006bb5;
+  color: white;
+  position: center;
+  height: 2em; }
+  .subHeaderNav a {
+    color: white; }
+    .subHeaderNav a:hover {
+      text-decoration: underline; }
+  .subHeaderNav li {
+    float: left;
+    padding-left: 2%; }
+
+.hoverBackground:hover {
+  background-color: white; }
+  .hoverBackground:hover a {
+    color: black; }
+
+.storeButton {
+  margin: 0% 0% 0% 80%; }
+
+.dropDown {
+  position: absolute;
+  display: none; }
+
+.subHeaderNav ul li:hover .dropDown {
+  display: block;
+  background-color: white;
+  color: black; }
+
+body {
+  background-color: #929292; }
+
+.clear {
+  clear: both; }
+
+.topNav {
+  background-color: white; }
+
+a {
+  text-decoration: none;
+  color: white; }
+
+.topNav a {
+  color: black; }
+
+.header {
+  background-color: #006bb5;
+  height: auto; }
+
+.companyLogo {
+  float: left;
+  margin: 0.25% 0% 0% 1%; }
+
+.subHeaderOne {
+  color: white;
+  font-size: 75%;
+  margin-left: 15%;
+  height: 3%;
+  padding: 2%;
+  float: left; }
+  .subHeaderOne a {
+    color: white; }
+    .subHeaderOne a:hover {
+      text-decoration: underline; }
+
+ul {
+  list-style-type: none; }
+
+.subHeaderNav {
+  background-color: #006bb5;
+  color: white;
+  position: center;
+  height: 2em; }
+  .subHeaderNav a {
+    color: white; }
+    .subHeaderNav a:hover {
+      text-decoration: underline; }
+  .subHeaderNav li {
+    float: left;
+    padding-left: 2%; }
+
+.hoverBackground:hover {
+  background-color: white; }
+  .hoverBackground:hover a {
+    color: black; }
+
+.storeButton {
+  margin: 0% 0% 0% 80%; }
+
+.dropDown {
+  position: absolute;
+  display: none; }
+
+.subHeaderNav ul li:hover .dropDown {
+  display: block;
+  background-color: white;
+  color: black; }
+
+.searchHeader {
+  background-color: #323232; }
+
+.searchBox {
+  border-radius: 30px;
+  padding: 2px; }
+
+.scoreBox {
+  background-color: silver; }
+  .scoreBox .scores li {
+    float: left;
+    margin-right: 75px; }
+    .scoreBox .scores li:hover {
+      backgroun-color: white; }
+    .scoreBox .scores li p {
+      margin-bottom: -15px; }

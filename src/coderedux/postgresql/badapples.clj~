@@ -1,0 +1,196 @@
+(ns coderedux.postgresql.badapples
+  (:use hiccup.element 
+        hiccup.core))
+
+(defn blank []
+  [:article.large-9.columns "blank page"])  
+
+(defn article []
+  [:article.large-9.columns
+   [:h3 "PostgreSQL Upsert; Some Bad Apples"]
+   [:p "The most long-awaited and in-demand feature of PostgreSQL was the “upsert” command. While I'm happy that this feature is finally implemented, I also found a few things that may trip up those who aren't well-versed in PostgreSQL. This post is more exploratory than functional, meant to illustrate some real-world problems I found."]
+
+   [:p "As always, the docs [1] do a wonderful job of explaining upsert, but to keep it clear, an upsert only works on primary and unique keys. Let's start with a table that can't use upsert:"]
+
+   [:pre.sql
+     "create table apples (
+	apple_id serial primary key,
+	apple_name varchar
+);
+
+insert into apples(apple_name)
+values ('fuji');
+
+select * from apples;
+
+>>>
+1 ; fuji
+
+"]
+   [:p "The syntax for upsert on this table is clearly pointless, but for demo purposes:"]
+   [:pre.sql
+    "
+insert into apples(apple_id, apple_name)
+values (1, 'pink lady')
+on conflict (apple_id)
+do update
+set apple_name = excluded.apple_name;
+
+>>>
+1 ; pink lady
+
+"]
+   
+[:p "If you are using pseudokeys, you probably won't gain anything from upserts. More on this later, but for now, we'll stick to natural keys."]
+
+ [:pre.sql
+  "
+create table apples (
+	apple_name varchar primary key,
+	apple_price numeric
+);
+
+insert into apples(apple_name, apple_price)
+values ('pink lady', .85);
+
+select *
+from apples;
+
+>>>
+pink lady ; 0.85
+
+"]
+
+[:p "Using upsert makes perfect sense here:"]
+
+ [:pre.sql
+"insert into apples(apple_name, apple_price)
+values ('pink lady', .99), ('fuji', .75)
+on conflict (apple_name)
+do update
+set apple_price = excluded.apple_price;
+
+select *
+from apples;
+
+>>> 
+pink lady ; 0.99
+fuji ; 0.75
+
+"]
+
+[:p "Of course, we can use more complex examples:"]
+
+ [:pre.sql "
+create table apples (
+	apple_name varchar,
+	bundle_type varchar,
+	bundle_price numeric,
+	primary key (apple_name, bundle_type)
+);
+
+insert into apples
+    (apple_name, bundle_type, bundle_price)
+values ('pink lady', 'bushel', 10), 
+('fuji', 'each', .75)
+on conflict (apple_name, bundle_type)
+do update
+set bundle_price = excluded.bundle_price;
+
+insert into apples
+    (apple_name, bundle_type, bundle_price)
+values ('pink lady', 'bushel', 10), 
+('fuji', 'each', 1)
+on conflict (apple_name, bundle_type)
+do update
+set bundle_price = excluded.bundle_price;
+
+select *
+from apples;
+
+>>>
+pink lady; bushel; 10
+fuju; each; 1
+
+"]
+
+[:p "The above works as expected. No problems."]
+
+[:p "Of course, there is a crowd that absolutely must have every primary key be a pseudokey. I'm not going to get into debates on this topic, and PostgreSQL gives you an out by allowing you to do upsert on unique keys… with large caveats."]
+
+ [:pre.sql "
+create table apples (
+	bundle_id serial primary key,
+	apple_name varchar,
+	bundle_type varchar,
+	bundle_price numeric,
+	unique (apple_name, bundle_type)
+);
+
+insert into apples
+    (apple_name, bundle_type, bundle_price)
+values ('pink lady', 'bushel', 10), 
+('fuji', 'each', 1)
+on conflict (apple_name, bundle_type)
+do update
+set bundle_price = excluded.bundle_price;
+
+select *
+from apples;
+
+>>>
+1; pink lady; bushel; 10
+2; fuji; each; 1
+
+"]
+
+[:p "Great, this works as expected so far, but what happens if we have an apple that we aren't sure of, but we want to get the base data in and save the updates for later?"]
+
+ [:pre.sql "
+insert into apples
+    (apple_name, bundle_type, bundle_price)
+values
+('pink lady', null, 5),
+('pink lady', 'bushel', 10), 
+('fuji', 'each', 1)
+on conflict (apple_name, bundle_type)
+do update
+set bundle_price = excluded.bundle_price;
+
+Query returned successfully: 3 rows affected, 
+13 msec execution time.
+
+insert into apples
+    (apple_name, bundle_type, bundle_price)
+values
+('pink lady', null, 5),
+('pink lady', 'bushel', 10), 
+('fuji', 'each', 1)
+on conflict (apple_name, bundle_type)
+do update
+set bundle_price = excluded.bundle_price;
+
+Query returned successfully: 3 rows affected, 
+13 msec execution time.
+
+"]
+
+[:p "Yes, I ran that twice, exactly as written above. Stop and think for a minute about the expected output. What should it be? PostgreSQL just told us that 3 rows were affected, so there should be 3 rows in this table now, right?"]
+
+ [:pre.sql "
+select *
+from apples;
+
+>>>
+3; pink lady; * ; 5
+6; pink lady; * ; 5
+1; pink lady; bushel; 10
+2; fuji ;each ; 1
+
+"]
+
+[:p "No... that is four rows with duplicate data."]
+
+[:p "Be very careful when using upsert. Be sure that the data you want to upsert on is not nullable, or you may run into major data integrity problems down the road."]
+
+[:p "[1]" [:a {:href "http://www.postgresql.org/docs/devel/static/sql-insert.html"} "Insert Documentation"]]])

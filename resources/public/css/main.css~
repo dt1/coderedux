@@ -1,0 +1,55 @@
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+    color: red;
+}
+
+h1 a{
+color: black;
+}
+
+h1 a:hover{
+color: black;
+text-decoration: none;
+}
+
+header, nav{
+    margin-left: 5%;
+}
+
+nav{
+    margin-top: 60px;
+    width: 200px;
+//    float:left;
+}
+
+#topNav a{
+    font-size: 1.25em;
+    margin-right: 10px;
+}
+.red{
+color: red;
+}
+
+article{
+    font-size: 1.25em;
+    float: left;
+    margin: -40% 20% 0% 25%;
+    text-align: justify;
+}
+
+dl, .notes, img{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+/* ul{ */
+/*     list-style-type: none; */
+/* } */
+
+pre.sql{
+    font-family: monospace;
+}
