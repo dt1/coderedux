@@ -41,7 +41,7 @@
 
    [:p "Now let's count the D Major Chord. We start at D and we see that the 3rd is F and the 5th is A resulting in D Major = D F A."]
 
-   [:p "Got it? Good, because the above is wrong. Way wrong. The D Major Chord is actually C F# A, and as you'll see in a second, this isn't the only mistake I made."] 
+   [:p "Got it? Good, because the above is wrong. Way wrong. The D Major Chord is actually D F# A, and as you'll see in a second, this isn't the only mistake I made."] 
 
    [:p "The problem was not the pattern because that is correct. I went wrong because I didn't consider what the Circle of Fifths said to do. The Circle of Fifth does more than just tell us the fifths of the notes. It tells us something much more significant: "]
 
